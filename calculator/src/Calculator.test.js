@@ -7,3 +7,8 @@ it('renders without crashing', () => {
     ReactDOM.render(<Calculator />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
+
+it('renders correctly', () => {
+    const Calc = renderer.create(<Calculator />).toJSON();
+    expect(Calc).toMatchSnapshot();
+});
